@@ -2,119 +2,114 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/layoutMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
-
-
+    android:background="@color/lightSteelBlue"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textEmployeeData"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/dane"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/dane_pracownika"
+        android:textStyle="bold"
+        android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="wrap_content"
+        android:id="@+id/editTextFirstName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="Imie"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="46dp" />
+        android:hint="@string/imie"
+        android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editTextText3"
-        android:layout_width="wrap_content"
+        android:id="@+id/editTextLastName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="Nazwisko"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="108dp" />
-
-
-
+        android:hint="@string/nazwisko"
+        android:inputType="textPersonName" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textPosition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Stanowisko"
-            tools:layout_editor_absoluteX="52dp"
-            tools:layout_editor_absoluteY="236dp" />
+            android:text="@string/stanowisko"
+            android:textStyle="bold"
+            android:layout_marginRight="10dp" />
 
         <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="match_parent"
+            android:id="@+id/spinnerPosition"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
-
-
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        android:id="@+id/textPasswordGen"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Generowanie hasła"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="236dp" />
-
-
+        android:text="@string/generowanie_hasla"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:textSize="18sp"/>
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/editTextPasswordLength"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/ile_znakow"
+        android:inputType="number" />
+
+    <CheckBox
+        android:id="@+id/checkBoxLetters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/male_wielkie_litery"
+        android:checked="true"/>
+
+    <CheckBox
+        android:id="@+id/checkBoxDigits"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cyfry" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSpecial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/znaki_specjalne" />
+
+    <Button
+        android:id="@+id/buttonGenerate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="Ile znaków?"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="46dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Małe i wielkie litery" />
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cyfry" />
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Znaki specjalne" />
+        android:text="@string/generuj_haslo"
+        android:backgroundTint="@color/steelBlue"
+        android:textColor="@android:color/white"
+        android:layout_gravity="end"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="110dp"
-        android:layout_height="40dp"
-        android:textSize="10dp"
-        android:text="Generuj hasło"
-        android:layout_marginLeft="250dp"/>
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="380dp"
+        android:id="@+id/buttonSubmit"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Zatwierdz"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="15dp"/>
+        android:text="@string/zatwierdz"
+        android:backgroundTint="@color/steelBlue"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="15dp" />
+
 
 
 </LinearLayout>
